@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Job Mart</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- ================= Loader ================= -->
+
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
+<!-- ================= Toast ================= -->
+
+<div id="toastContainer"></div>
+
+<!-- ================= Navbar ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            Job <span>Mart</span>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+
+                <a href="#"
+                   id="homeNav">
+
+                    Home
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#"
+                   id="jobsNav">
+
+                    Jobs
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#"
+                   id="dashboardNav">
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#"
+                   id="profileNav">
+
+                    Profile
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <div class="nav-buttons">
+
+            <button id="loginBtn">
+
+                Login
+
+            </button>
+
+            <button id="signupBtn"
+                    class="primary">
+
+                Sign Up
+
+            </button>
+
+            <button id="logoutBtn"
+                    class="danger hidden">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+
+
+
+<!-- HOME -->
+
+<section id="homePage">
+
+    <div class="hero">
+
+        <div class="hero-left">
+
+            <h1>
+
+                Find Your Dream Job Today
+
+            </h1>
+
+            <p>
+
+                Job Mart connects talented professionals with
+                amazing companies across the world.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <button id="exploreJobs"
+                        class="primary">
+
+                    Explore Jobs
+
+                </button>
+
+                <button id="startHiring">
+
+                    Start Hiring
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900"
+                 alt="Job Search">
+
+        </div>
+
+    </div>
+
+
+
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <h2>
+
+                15K+
+
+            </h2>
+
+            <p>
+
+                Jobs
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+
+                5K+
+
+            </h2>
+
+            <p>
+
+                Companies
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+
+                50K+
+
+            </h2>
+
+            <p>
+
+                Candidates
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+
+                99%
+
+            </h2>
+
+            <p>
+
+                Success Rate
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="features">
+
+        <div class="feature">
+
+            <h3>
+
+                Smart Search
+
+            </h3>
+
+            <p>
+
+                Search jobs with pagination and sorting.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <h3>
+
+                Resume Upload
+
+            </h3>
+
+            <p>
+
+                Upload resume in one click.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <h3>
+
+                Recruiter Dashboard
+
+            </h3>
+
+            <p>
+
+                Manage applicants efficiently.
+
+            </p>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+
+
+
+<!-- JOBS -->
+
+<section
+        id="jobsPage"
+        class="hidden">
+
+    <div class="page-title">
+
+        <h2>
+
+            Available Jobs
+
+        </h2>
+
+    </div>
+
+    <div class="toolbar">
+
+        <input
+    type="text"
+    id="searchTitle"
+    placeholder="Search Title">
+
+<input
+    type="text"
+    id="searchCompany"
+    placeholder="Search Company">
+
+<input
+    type="text"
+    id="searchLocation"
+    placeholder="Search Location">
+
+<button
+    id="searchBtn"
+    class="primary">
+
+    Search
+
+</button>
+        <select id="sortBy">
+
+            <option value="postedAt">
+
+                Latest
+
+            </option>
+
+            <option value="salary">
+
+                Salary
+
+            </option>
+
+            <option value="title">
+
+                Title
+
+            </option>
+
+        </select>
+
+        <select id="direction">
+
+            <option value="desc">
+
+                Desc
+
+            </option>
+
+            <option value="asc">
+
+                Asc
+
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="jobs-layout">
+
+    <div>
+
+        <div id="jobsContainer"
+             class="job-grid">
+
+        </div>
+
+        <div id="pagination"></div>
+
+    </div>
+
+    <div id="jobDetails"
+         class="job-details">
+
+        <h2>Select a Job</h2>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- PROFILE -->
+
+<section
+        id="profilePage"
+        class="hidden">
+
+    <div class="profile-card">
+
+    <div id="profileDetails"></div>
+
+    <form id="updateProfileForm">
+
+        <input
+            id="updateName"
+            placeholder="Full Name">
+
+        <input
+            id="updateEmail"
+            type="email"
+            placeholder="Email">
+
+        <button
+            class="primary">
+
+            Update Profile
+
+        </button>
+
+    </form>
+
+</div>
+
+    <div class="resume-section">
+
+        <input
+                type="file"
+                id="resumeFile">
+
+        <button id="uploadResume"
+                class="primary">
+
+            Upload Resume
+
+        </button>
+
+        <button id="downloadResume">
+
+            Download Resume
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- RECRUITER -->
+
+<section
+        id="dashboardPage"
+        class="hidden">
+
+    <div class="dashboard-header">
+
+        <h2>
+
+            Recruiter Dashboard
+
+        </h2>
+
+        <button
+                id="createJobBtn"
+                class="primary">
+
+            + Create Job
+
+        </button>
+
+    </div>
+
+    <div id="myJobsContainer"
+     class="job-grid">
+</div>
+
+</section>
+
+
+
+
+
+<!-- APPLICANTS -->
+
+<section id="applicantPage" class="hidden">
+
+    <h2>Applicants</h2>
+
+    <div class="applicant-layout">
+
+        <div id="applicantsContainer"></div>
+
+        <div id="resumeViewer">
+
+           <h2>Select Applicant</h2>
+
+       </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- LOGIN MODAL -->
+
+<div
+        class="modal hidden"
+        id="loginModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              id="closeLogin">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            Login
+
+        </h2>
+
+        <form id="loginForm">
+
+            <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email"
+                    required>
+
+            <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    required>
+
+            <button
+                    class="primary">
+
+                Login
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- SIGNUP MODAL -->
+
+<div
+        class="modal hidden"
+        id="signupModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              id="closeSignup">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            Create Account
+
+        </h2>
+
+        <form id="signupForm">
+
+            <input
+                    id="signupName"
+                    placeholder="Full Name"
+                    required>
+
+            <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Email"
+                    required>
+
+            <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Password"
+                    required>
+
+            <select id="signupRole">
+
+                <option value="JOB_SEEKER">
+
+                    Job Seeker
+
+                </option>
+
+                <option value="RECRUITER">
+
+                    Recruiter
+
+                </option>
+
+            </select>
+
+            <button
+                    class="primary">
+
+                Register
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- CREATE JOB MODAL -->
+
+<div
+        class="modal hidden"
+        id="jobModal">
+
+    <div class="modal-content large">
+
+        <span
+                class="close"
+                id="closeJob">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            Create New Job
+
+        </h2>
+
+        <form id="createJobForm">
+
+            <input
+                    id="jobTitle"
+                    placeholder="Job Title"
+                    required>
+
+            <textarea
+                    id="jobDescription"
+                    placeholder="Description"
+                    required>
+
+            </textarea>
+
+            <input
+                    id="jobCompany"
+                    placeholder="Company">
+
+            <input
+                    id="jobLocation"
+                    placeholder="Location">
+
+            <input
+                    type="number"
+                    id="jobSalary"
+                    placeholder="Salary in lpa">
+
+            <button type="submit" class="primary">
+    Publish Job
+</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
