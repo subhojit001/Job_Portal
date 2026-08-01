@@ -7,7 +7,7 @@
                         CONFIGURATION
    ============================================================ */
 
-const API_BASE = "hire-hub-production.up.railway.app";
+const API_BASE = "https://hire-hub-production.up.railway.app";
 
 /* ============================================================
                         API ENDPOINTS
