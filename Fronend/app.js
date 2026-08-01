@@ -7,7 +7,7 @@
                         CONFIGURATION
    ============================================================ */
 
-const API_BASE = "http://localhost:9090";
+const API_BASE = "hire-hub-production.up.railway.app";
 
 /* ============================================================
                         API ENDPOINTS
