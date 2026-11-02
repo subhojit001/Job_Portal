@@ -1,4 +1,4 @@
-# 💼 Hire-Hub – Job Portal
+# 💼 Job Portal Application
 
 Hire-Hub is a **Spring Boot-based Job Portal application** designed to connect job seekers with recruiters. It provides functionalities for recruiters to post and manage jobs and for job seekers to search for opportunities and apply for jobs.
 
